@@ -1,0 +1,18 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+        - npm ci
+    build:
+      commands:
+        - npm install
+        - npm run build
+  artifacts:
+    baseDirectory: dist/overmortalmeta
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
